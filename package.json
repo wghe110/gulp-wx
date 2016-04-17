@@ -1,0 +1,34 @@
+{
+  "name": "gulp-wx",
+  "version": "1.0.0",
+  "description": "gulp for weixin develop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "wx"
+  ],
+  "author": "wghe110",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "browser-sync": "^2.12.3",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-autoprefixer": "^3.1.0",
+    "del": "^2.2.0",
+    "gulp-imagemin": "^2.4.0",
+    "imagemin-jpeg-recompress": "^4.3.0",
+    "imagemin-pngquant": "^4.2.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^1.5.3",
+    "gulp-rev": "^7.0.0",
+    "gulp-rev-collector": "^1.0.3",
+    "gulp-replace": "^0.5.4",
+    "gulp-sequence": "^0.4.5",
+    "gulp-iconv": "^0.0.1",
+    "gulp-open": "^1.0.0",
+    "gulp-ftp": "^1.1.0"
+  }
+}
