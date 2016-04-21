@@ -43,7 +43,7 @@ var del 		   = require('del'),						//清空目录
 	gulpSequence   = require('gulp-sequence');				//gulp task任务排序执行
 
 gulp.task('del-dist', function(){
-	return del(['dist/', 'rev/'])
+	return del(['dist/**', 'rev/**', 'upload/**', '**/*.gitkeep'])
 })
 //min
 gulp.task('min-jpg', function(){
@@ -55,7 +55,7 @@ gulp.task('min-jpg', function(){
 	.pipe(gulp.dest('rev/'))
 })
 gulp.task('min-png', function(){
-	return gulp.src('src/img/**/*.jpg')
+	return gulp.src('src/img/**/*.png')
 	.pipe(imagemin({progressive:false,use:[pngquant()]}))
 	.pipe(rev())
 	.pipe(gulp.dest('dist/img/'))
@@ -109,11 +109,11 @@ var iconv = require('gulp-iconv'),	//编码转换
 	ftp   = require('gulp-ftp');	//上传
 
 var config_ftp = {
-	domain: '',
-	host: '',
-	remotePath: '',
-	user: '',
-	pass: ''
+	domain: '',			//主路径
+	host: '',			//host地址
+	remotePath: '',		//子目录
+	user: '',			//用户名
+	pass: ''			//密码
 };
 
 gulp.task('UTFtoGBK', function(){
@@ -127,7 +127,7 @@ gulp.task('UTFtoGBK', function(){
 })
 gulp.task('copyAsset', function(){
 	return gulp.src('dist/img/**')
-	.pipe(gulp.dest('upload/'))
+	.pipe(gulp.dest('upload/img/'))
 })
 gulp.task('ftp', function(){
 	return gulp.src('upload/**')
